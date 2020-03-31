@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>pwa</title>
+  </head>
+  <body></body>
+  <script>
+    navigator.serviceWorker.register('./sw.js', { scope: '/' }).then(
+      ServiceWorkerRegistration => {
+        // console.log(ServiceWorkerRegistration)
+      },
+      err => console.error(err)
+    )
+  </script>
+  <script>
+    fetch('./userinfo.json').then(res => res.json()).then(res=>console.log(res))
+  </script>
+</html>
